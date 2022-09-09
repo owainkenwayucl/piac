@@ -57,22 +57,4 @@ def timefunc(function, n, m):
 	stop = time.time()
 	return (stop - start), p, err
 
-def bench(lower, step, upper):
-	current = lower
-
-	# precompile
-	tt, tp, te = timefunc(integralpi, 1, 1)
-	tt, tp, te = timefunc(montecarlopi, 1, 1)
-	tt, tp, te = timefunc(gridpi, 1, 1)
-
-	print("Samples, Integral time, Integral error, Monte Carlo time, Monte Carlo error, Grid time, Grid error")
-	while (current < upper):
-		dim = math.floor(math.sqrt(current))
-		real = dim * dim
-		it, ip, ie = timefunc(integralpi, dim, dim)
-		mt, mp, me = timefunc(montecarlopi, dim, dim)
-		gt, gp, ge = timefunc(gridpi, dim, dim)
-		print(str(real) + ", " + str(it) + ", " + str(ie) + ", " + str(mt) + ", " + str(me) + ", " + str(gt) + ", " + str(ge) + ", " )
-
-		current += step
 
