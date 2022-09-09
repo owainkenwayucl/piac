@@ -57,4 +57,7 @@ def timefunc(function, n, m):
 	stop = time.time()
 	return (stop - start), p, err
 
-
+# precompile
+tt, tp, te = timefunc(integralpi, 1, 1)
+tt, tp, te = timefunc(montecarlopi, 1, 1)
+tt, tp, te = timefunc(gridpi, 1, 1)
