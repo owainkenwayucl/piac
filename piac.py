@@ -3,6 +3,7 @@ import time
 import math
 import random
 import numba
+import statistics
 
 @numba.jit(parallel=True, nopython=True)
 def integralpi(n, m):
@@ -31,6 +32,7 @@ def montecarlopi(n, m):
 			count += 1
 
 	p = 4*count/numsamples
+	
 	return p, abs(p - math.pi), stats
 
 @numba.jit(parallel=True, nopython=True)
@@ -50,25 +52,24 @@ def gridpi(n, m):
 
 	p = 4*count/(n*m)
 
-
 	return p, abs(p - math.pi), stats
 
 def ensemble(n, m, i):
 	stats = {}
 
-	sump = 0.0
-	minp = math.inf
-	maxp = 0.0
+	results = []
 	for a in range(i):
 		temp_p, temp_e, temp_s = montecarlopi(n,m)
-		sump += temp_p
-		maxp = max(maxp, temp_p)
-		minp = min(minp, temp_p)
+		results.append(temp_p)
 
-	p = sump/i
+	p = statistics.mean(results)
 
-	stats['min'] = minp
-	stats['max'] = maxp
+	stats['min'] = min(results)
+	stats['max'] = max(results)
+	stats['pvar'] = statistics.pvariance(results)
+	stats['pstdev'] = math.sqrt(statistics.pstdev(results))
+	stats['var'] = statistics.variance(results)
+	stats['stdev'] = math.sqrt(statistics.stdev(results))
 	stats['mean'] = p
 
 	return p, abs(p - math.pi), stats
