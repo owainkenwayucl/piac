@@ -51,9 +51,11 @@ def gridpi(n, m):
 	return p, abs(p - math.pi)
 
 
-def timefunc(function, n, m):
+
+
+def timefunc(function, *args, **kwargs):
 	start = time.time()
-	p, err = function(n,m)
+	p, err = function(*args, **kwargs)
 	stop = time.time()
 	return (stop - start), p, err
 
