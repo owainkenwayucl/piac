@@ -12,9 +12,9 @@ def bench(lower, step, upper):
 	while (current < upper):
 		dim = math.floor(math.sqrt(current))
 		real = dim * dim
-		it, ip, ie = piac.timefunc(piac.integralpi, dim, dim)
-		mt, mp, me = piac.timefunc(piac.montecarlopi, dim, dim)
-		gt, gp, ge = piac.timefunc(piac.gridpi, dim, dim)
+		it, ip, ie, iess = piac.timefunc(piac.integralpi, dim, dim)
+		mt, mp, me, ms = piac.timefunc(piac.montecarlopi, dim, dim)
+		gt, gp, ge, gs = piac.timefunc(piac.gridpi, dim, dim)
 		print(str(real) + ", " + str(it) + ", " + str(ie) + ", " + str(mt) + ", " + str(me) + ", " + str(gt) + ", " + str(ge) + ", " )
 
 		current += step
