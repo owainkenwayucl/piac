@@ -68,8 +68,8 @@ def ensemble(n, m, i):
 	stats['max'] = max(results)
 	stats['pvar'] = statistics.pvariance(results)
 	stats['pstdev'] = math.sqrt(statistics.pstdev(results))
-	stats['var'] = statistics.variance(results)
-	stats['stdev'] = math.sqrt(statistics.stdev(results))
+	##stats['var'] = statistics.variance(results)
+	##stats['stdev'] = math.sqrt(statistics.stdev(results))
 	stats['mean'] = p
 
 	return p, abs(p - math.pi), stats
