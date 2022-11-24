@@ -17,9 +17,9 @@ function [mcp,err, et] = mcp(N)
     % if sample is in plot in red else plot in blue
     if (s_x^2 + s_y^2 <= 1) 
       number_in = number_in + 1;
-      plot(s_x,s_y,'r');
+      scatter(s_x,s_y,'r');
     else
-      plot(s_x,s_y,'b');
+      scatter(s_x,s_y,'b');
     end
     drawnow();
   end
