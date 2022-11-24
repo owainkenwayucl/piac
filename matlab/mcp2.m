@@ -1,7 +1,7 @@
 % Estimate pi by Monte Carlo methods. Use vector/matrix math so very fast,
 % but must plot at the end.
 % Owain Kenway
-function [mcp2,err, et] = mcp2(N)
+function [mcp2,err,et] = mcp2(N)
   s_t = tic;
   
   % initialise plot

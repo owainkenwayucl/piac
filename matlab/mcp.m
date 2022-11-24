@@ -1,6 +1,6 @@
 % Estimate pi by Monte Carlo methods, plot points as they are estimated.
 % Owain Kenway
-function [mcp,err, et] = mcp(N)
+function [mcp,err,et] = mcp(N)
   s_t = tic;
   number_in = 0;
   
