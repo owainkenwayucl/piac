@@ -31,4 +31,4 @@ function [mcp2,err, et] = mcp2(N)
   mcp2 = 4*ratio;
   err = abs(pi - mcp2);
   et = toc(s_t);
-endfunction
+end

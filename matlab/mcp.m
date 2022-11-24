@@ -35,4 +35,4 @@ function [mcp,err, et] = mcp(N)
   mcp = 4*ratio;
   err = abs(pi - mcp);
   et = toc(s_t);
-endfunction
+end
