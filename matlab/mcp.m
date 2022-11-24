@@ -1,3 +1,5 @@
+% Estimate pi by Monte Carlo methods, plot points as they are estimated.
+% Owain Kenway
 function [mcp,err, et] = mcp(N)
   s_t = tic;
   number_in = 0;
@@ -17,14 +19,17 @@ function [mcp,err, et] = mcp(N)
     % if sample is in plot in red else plot in blue
     if (s_x^2 + s_y^2 <= 1) 
       number_in = number_in + 1;
-      scatter(s_x,s_y,'r');
+      scatter(s_x,s_y,1,'r');
     else
-      scatter(s_x,s_y,'b');
+      scatter(s_x,s_y,1,'b');
     end
+    
+    % force update
     drawnow();
   end
   
   hold off;
+  
   % return estimate, error
   ratio = number_in/N;
   mcp = 4*ratio;
