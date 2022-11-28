@@ -7,7 +7,7 @@ function [mcp2,err,et] = mcp2(N)
   % initialise plot
   clf;
   x = 0:0.0001:1;
-  y = sqrt(1 .- x.^2);
+  y = sqrt(1 - x.^2);
   plot(x,y,'k');
   colours = [0 0 1; 1 0 0 ];
   hold on;
