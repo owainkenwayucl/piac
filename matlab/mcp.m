@@ -10,6 +10,7 @@ function [mcp,err,et] = mcp(N)
   y = sqrt(1 - x.^2);
   plot(x,y,'k');
   hold on;
+  axis square;
   
   % looping sample
   for i=1:N
@@ -27,7 +28,7 @@ function [mcp,err,et] = mcp(N)
     % force update
     drawnow();
   end
-  
+
   hold off;
   
   % return estimate, error

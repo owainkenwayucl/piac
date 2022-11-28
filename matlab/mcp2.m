@@ -11,6 +11,7 @@ function [mcp2,err,et] = mcp2(N)
   plot(x,y,'k');
   colours = [0 0 1; 1 0 0 ];
   hold on;
+  axis square;
   
   % Generate random x and y
   s_x = rand(1,N);
