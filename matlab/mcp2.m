@@ -20,7 +20,7 @@ function [mcp2,err,et] = mcp2(N)
   R = (s_x.^2 + s_y.^2) <= 1; 
   
   % map in or out to colours in colour map
-  c = colours(R .+ 1, :);
+  c = colours(R + 1, :);
   
   % plot
   scatter(s_x,s_y,1,c);
